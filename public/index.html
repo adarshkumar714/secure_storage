@@ -1,1 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CloudLock Drive</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="authPanel" class="auth-screen">
+        <div id="landingView" class="auth-copy">
+          <div class="entry-strip">
+            <a href="#signup" class="entry-link create-link">Create Account</a>
+            <span class="entry-divider" aria-hidden="true"></span>
+            <a href="#login" class="entry-link login-link">Login</a>
+          </div>
 
+          <div class="hero-topbar">
+            <a href="#" class="brand-row brand-home">
+              <div class="brand-mark">C</div>
+              <div>
+                <p class="brand-kicker" data-i18n="brandKicker">Encrypted personal cloud</p>
+                <h1 data-i18n="brandTitle">CloudLock Drive</h1>
+              </div>
+            </a>
+          </div>
+          <p class="hero-text" data-i18n="heroText">
+            Securely upload your important files, keep them private with your own vault key, and
+            access them from your personal dashboard.
+          </p>
+
+          <div class="hero-badges">
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              Folder-based security
+            </div>
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              Private vault access
+            </div>
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              Encrypted file flow
+            </div>
+          </div>
+
+          <div class="hero-grid">
+            <div class="trust-strip">
+              <div class="trust-item">
+                <strong>Client-side encryption</strong>
+                <p>Your file is encrypted before upload starts.</p>
+              </div>
+              <div class="trust-item">
+                <strong>User-only access</strong>
+                <p>Only the logged-in user can open their personal dashboard.</p>
+              </div>
+              <div class="trust-item">
+                <strong>Protected passwords</strong>
+                <p>Passwords are not stored in plain text in the database.</p>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <p class="section-kicker">Platform Summary</p>
+              <h3>Simple secure cloud storage for users</h3>
+              <div class="summary-list">
+                <div class="summary-item">
+                  <span class="summary-icon">01</span>
+                  <strong>Private user dashboard</strong>
+                  <span>Users sign up, login, and manage their own files.</span>
+                </div>
+                <div class="summary-item">
+                  <span class="summary-icon">02</span>
+                  <strong>Encrypted file flow</strong>
+                  <span>Files are encrypted in the browser before reaching server storage.</span>
+                </div>
+                <div class="summary-item">
+                  <span class="summary-icon">03</span>
+                  <strong>Preview and download</strong>
+                  <span>Users can view supported files or download them with the vault key.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-info">
+            <h3 data-i18n="trustTitle">Why users can trust this platform</h3>
+            <div class="project-info-grid">
+              <article>
+                <h4>Encrypted Upload</h4>
+                <p>
+                  Files are encrypted in the browser using the vault key before they are sent to
+                  the server.
+                </p>
+              </article>
+              <article>
+                <h4>Private File Records</h4>
+                <p>
+                  Each uploaded file is linked to the logged-in user account, so other users cannot
+                  access it.
+                </p>
+              </article>
+              <article>
+                <h4>No Plain File Reading</h4>
+                <p>
+                  The server stores encrypted files, which means raw readable content is not kept
+                  openly in storage.
+                </p>
+              </article>
+              <article>
+                <h4>Strong Account Security</h4>
+                <p>
+                  New accounts require stronger passwords with uppercase, lowercase, number, and
+                  special character.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <div class="slides-panel">
+            <div class="slides-header">
+              <div>
+                <p class="section-kicker" data-i18n="slidesKicker">Storage Highlights</p>
+                <h3 data-i18n="slidesTitle">How CloudLock protects your storage</h3>
+              </div>
+              <div class="slides-controls">
+                <button id="prevSlideBtn" type="button" class="ghost-btn slide-btn">Prev</button>
+                <button id="nextSlideBtn" type="button" class="ghost-btn slide-btn">Next</button>
+              </div>
+            </div>
+            <div class="slides-track">
+              <article class="info-slide active" data-slide-index="0">
+                <span class="slide-badge">01</span>
+                <h4>Encrypted Before Upload</h4>
+                <p>
+                  Files are encrypted in the browser before reaching the server, so storage keeps
+                  unreadable encrypted content.
+                </p>
+              </article>
+              <article class="info-slide" data-slide-index="1">
+                <span class="slide-badge">02</span>
+                <h4>User-Controlled Vault Key</h4>
+                <p>
+                  The user controls the vault key for upload, preview, and download, which helps
+                  keep access limited to the intended person.
+                </p>
+              </article>
+              <article class="info-slide" data-slide-index="2">
+                <span class="slide-badge">03</span>
+                <h4>Organized Secure Storage</h4>
+                <p>
+                  Encrypted files are stored in the uploads folder while user and file records are
+                  managed safely in the project database.
+                </p>
+              </article>
+            </div>
+            <div class="slide-dots">
+              <button type="button" class="slide-dot active" data-slide-dot="0"></button>
+              <button type="button" class="slide-dot" data-slide-dot="1"></button>
+              <button type="button" class="slide-dot" data-slide-dot="2"></button>
+            </div>
+          </div>
+
+          <div class="workflow-panel">
+            <div class="workflow-header">
+              <div>
+                <p class="section-kicker">How It Works</p>
+                <h3>Simple secure folder flow</h3>
+              </div>
+            </div>
+            <div class="workflow-steps">
+              <article class="workflow-step">
+                <span class="workflow-index">01</span>
+                <strong>Create a folder</strong>
+                <p>Users create a secure folder with a unique folder name and private vault key.</p>
+              </article>
+              <article class="workflow-step">
+                <span class="workflow-index">02</span>
+                <strong>Upload into that folder</strong>
+                <p>Files are encrypted in the browser and stored under the selected secure folder.</p>
+              </article>
+              <article class="workflow-step">
+                <span class="workflow-index">03</span>
+                <strong>Unlock folder later</strong>
+                <p>Users must enter the correct folder vault key before any files inside become visible.</p>
+              </article>
+              <article class="workflow-step">
+                <span class="workflow-index">04</span>
+                <strong>View or download safely</strong>
+                <p>Only after unlocking can users preview, download, or delete the files in that folder.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="auth-side">
+          <div class="side-info-stack" id="authInfoPanel">
+            <article class="side-info-card diagram-card">
+              <p class="section-kicker">Folder Security Diagram</p>
+              <h3>Protected folder access</h3>
+              <div class="diagram-flow">
+                <div class="diagram-node">Create Folder</div>
+                <div class="diagram-arrow">↓</div>
+                <div class="diagram-node">Set Unique Vault Key</div>
+                <div class="diagram-arrow">↓</div>
+                <div class="diagram-node">Upload Encrypted Files</div>
+                <div class="diagram-arrow">↓</div>
+                <div class="diagram-node">Enter Folder Vault Key</div>
+                <div class="diagram-arrow">↓</div>
+                <div class="diagram-node diagram-node-accent">View Protected Data</div>
+              </div>
+            </article>
+
+            <article class="side-info-card">
+              <p class="section-kicker">Trusted Storage</p>
+              <h3>Secure access on every step</h3>
+              <p>
+                From account creation to file preview, CloudLock uses protected login, encrypted
+                uploads, and private vault-key based access.
+              </p>
+            </article>
+
+            <article class="side-info-card side-metrics">
+              <div class="metric-row">
+                <strong>Client Encryption</strong>
+                <span>Enabled</span>
+              </div>
+              <div class="metric-row">
+                <strong>Preview Support</strong>
+                <span>Images, PDF, Text</span>
+              </div>
+              <div class="metric-row">
+                <strong>Storage Model</strong>
+                <span>Encrypted file vault</span>
+              </div>
+            </article>
+
+            <article class="side-info-card">
+              <p class="section-kicker">Storage Workflow</p>
+              <h4>Private cloud experience</h4>
+              <p>
+                Users can upload, preview, and download their data through a secure personal panel.
+              </p>
+              <div class="side-points">
+                <div class="side-point">
+                  <strong>1. Register and login</strong>
+                  <span>Create account first, then login to enter the vault.</span>
+                </div>
+                <div class="side-point">
+                  <strong>2. Upload with vault key</strong>
+                  <span>Files are encrypted before they are stored on the server.</span>
+                </div>
+                <div class="side-point">
+                  <strong>3. View or download later</strong>
+                  <span>Use the correct vault key to preview or download your data.</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div id="authPageView" class="auth-card hidden">
+            <div class="auth-page-top">
+              <a href="#" id="backToHome" class="back-link">Back to Home</a>
+              <div class="page-switcher">
+                <a href="#signup" class="tab text-decoration-none" data-tab="signup">Create Account</a>
+                <span class="tab-divider" aria-hidden="true"></span>
+                <a href="#login" class="tab text-decoration-none" data-tab="login">Login</a>
+              </div>
+            </div>
+
+            <form id="signupForm" class="auth-form active">
+              <h2 data-i18n="signupTitle">Create Your Account</h2>
+              <p class="muted" data-i18n="signupHelp">
+                Password must include uppercase, lowercase, number, and special character.
+              </p>
+              <label>
+                Full Name
+                <input
+                  class="form-control form-control-lg"
+                  type="text"
+                  name="name"
+                  placeholder="Enter your full name"
+                  data-i18n-placeholder="placeholderName"
+                  autocomplete="name"
+                  required
+                />
+              </label>
+              <label>
+                <span data-i18n="labelEmail">Email Address</span>
+                <input
+                  class="form-control form-control-lg"
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  data-i18n-placeholder="placeholderEmail"
+                  autocomplete="email"
+                  required
+                />
+              </label>
+              <label>
+                <span data-i18n="labelPassword">Password</span>
+                <input
+                  class="form-control form-control-lg"
+                  type="password"
+                  name="password"
+                  placeholder="Example: Cloud@123"
+                  data-i18n-placeholder="placeholderSignupPassword"
+                  autocomplete="new-password"
+                  required
+                />
+              </label>
+              <button type="submit" class="btn btn-primary btn-lg auth-submit" data-i18n="createAccountButton">
+                Create Account
+              </button>
+            </form>
+
+            <form id="loginForm" class="auth-form">
+              <h2 data-i18n="loginTitle">Welcome Back</h2>
+              <p class="muted" data-i18n="loginHelp">Login to open your personal cloud dashboard.</p>
+              <label>
+                <span data-i18n="labelEmail">Email Address</span>
+                <input
+                  class="form-control form-control-lg"
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  data-i18n-placeholder="placeholderEmail"
+                  autocomplete="email"
+                  required
+                />
+              </label>
+              <label>
+                <span data-i18n="labelPassword">Password</span>
+                <input
+                  class="form-control form-control-lg"
+                  type="password"
+                  name="password"
+                  placeholder="Enter your password"
+                  data-i18n-placeholder="placeholderLoginPassword"
+                  autocomplete="current-password"
+                  required
+                />
+              </label>
+              <button type="submit" class="btn btn-primary btn-lg auth-submit" data-i18n="loginButton">
+                Login
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section id="dashboard" class="dashboard hidden">
+        <aside class="sidebar">
+          <a href="#" class="sidebar-brand brand-home">
+            <div class="brand-mark">C</div>
+            <div>
+              <p class="brand-kicker">CloudLock Drive</p>
+              <h2>Private Vault</h2>
+            </div>
+          </a>
+
+          <nav class="side-nav">
+            <button type="button" class="nav-item active">My Files</button>
+            <button type="button" class="nav-item">Secure Upload</button>
+            <button type="button" class="nav-item">Vault Access</button>
+          </nav>
+
+          <div class="storage-note">
+            <h3>Storage Info</h3>
+            <p>
+              Files are stored on the server inside the <code>uploads/</code> folder and file
+              details are saved in <code>cloud.db</code>.
+            </p>
+          </div>
+        </aside>
+
+        <div class="dashboard-main">
+          <header class="topbar">
+            <div>
+              <p class="brand-kicker">User Panel</p>
+              <h1 id="welcomeText">Welcome</h1>
+            </div>
+            <div class="topbar-actions">
+              <button id="refreshBtn" type="button" class="ghost-btn">Refresh</button>
+              <button id="logoutBtn" type="button" class="ghost-btn danger-btn">Logout</button>
+            </div>
+          </header>
+
+          <section class="stats-grid">
+            <article class="stat-card">
+              <p>Total Files</p>
+              <strong id="totalFiles">0</strong>
+            </article>
+            <article class="stat-card">
+              <p>Privacy Mode</p>
+              <strong>Encrypted</strong>
+            </article>
+            <article class="stat-card">
+              <p>Access Type</p>
+              <strong>User Only</strong>
+            </article>
+          </section>
+
+          <section class="workspace-grid">
+            <div class="panel upload-panel">
+              <div class="panel-head">
+                <div>
+                  <p class="section-kicker">Secure Upload</p>
+                  <h3>Upload File</h3>
+                </div>
+              </div>
+
+              <form id="uploadForm" class="upload-form">
+                <label>
+                  Select Folder
+                  <select id="existingFolderSelect" required>
+                    <option value="">Select your folder</option>
+                  </select>
+                </label>
+                <label>
+                  Folder Vault Key
+                  <input
+                    type="password"
+                    id="uploadVaultKey"
+                    placeholder="Enter one vault key for this folder"
+                    required
+                  />
+                </label>
+                <label>
+                  Select File
+                  <input type="file" id="fileInput" required />
+                </label>
+                <button type="submit">Encrypt and Upload File</button>
+              </form>
+
+              <p class="helper">
+                Use one folder name and one vault key to store many files together. Keep the same
+                vault key for that folder if you want to open those files later.
+              </p>
+            </div>
+
+            <div class="panel quick-panel">
+              <div class="panel-head">
+                <div>
+                  <p class="section-kicker">Create Folder</p>
+                  <h3>New Secure Folder</h3>
+                </div>
+              </div>
+              <form id="createFolderForm" class="upload-form">
+                <label>
+                  Folder Name
+                  <input
+                    type="text"
+                    id="newFolderName"
+                    placeholder="Example: Personal Documents"
+                    required
+                  />
+                </label>
+                <label>
+                  Unique Folder Vault Key
+                  <input
+                    type="password"
+                    id="newFolderVaultKey"
+                    placeholder="Create a vault key for this folder"
+                    required
+                  />
+                </label>
+                <button type="submit">Create Folder</button>
+              </form>
+              <p class="helper">
+                Every folder has a separate name and its own unique vault key. Users must enter the
+                correct folder vault key before the system shows files inside that folder.
+              </p>
+            </div>
+          </section>
+
+          <section class="panel files-panel">
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">Encrypted Library</p>
+                <h3>Your Files</h3>
+              </div>
+            </div>
+            <div id="filesList" class="files-list"></div>
+          </section>
+        </div>
+      </section>
+
+      <div id="previewModal" class="preview-modal hidden">
+        <div class="preview-dialog">
+          <div class="preview-header">
+            <div>
+              <p class="section-kicker">File Preview</p>
+              <h3 id="previewTitle">Preview</h3>
+            </div>
+            <button id="closePreviewBtn" type="button" class="ghost-btn">Close</button>
+          </div>
+          <div id="previewContent" class="preview-content"></div>
+        </div>
+      </div>
+
+      <div id="statusBox" class="status-box"></div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
